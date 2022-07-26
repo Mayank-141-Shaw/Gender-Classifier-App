@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,5 +33,10 @@ public class UserController {
 	@GetMapping("/id/{id}")
 	public User getUserData(@PathVariable long id) {
 		return userService.getUserById(id);
+	}
+	
+	@GetMapping()
+	public List<User> getAllUsers(){
+		return userService.getAllUsers();
 	}
 }
